@@ -447,28 +447,31 @@ def changeLocation(geocoder, address=""):
 	return coordlocation
 	
 def read(yaklist):
-	yakNum = 1
-	for yak in yaklist:
-		# line between yaks
-		print ("_" * 93)
-		# show yak
-		print (yakNum)
-		yak.print_yak()
+	# yakNum = 1
+	# for yak in yaklist:
+	# 	# line between yaks
+	# 	print ("_" * 93)
+	# 	# show yak
+	# 	print (yakNum)
+	# 	yak.print_yak()
 		
-		commentNum = 1
-		# comments header
-		comments = yak.get_comments()
-		print ("\n\t\tComments:", end='')
-		# number of comments
-		print (len(comments))
+	# 	commentNum = 1
+	# 	# comments header
+	# 	comments = yak.get_comments()
+	# 	print ("\n\t\tComments:", end='')
+	# 	# number of comments
+	# 	print (len(comments))
 		
-		# print all comments separated by dashes
-		for comment in comments:
-			print ("\t   {0:>4}".format(commentNum), end=' ')
-			print ("-" * 77)
-			comment.print_comment()
-			commentNum += 1
+	# 	# print all comments separated by dashes
+	# 	for comment in comments:
+	# 		print ("\t   {0:>4}".format(commentNum), end=' ')
+	# 		print ("-" * 77)
+	# 		comment.print_comment()
+	# 		commentNum += 1
 			
-		yakNum += 1
+	# 	yakNum += 1
+	f = open("yaks.txt", "w")
+	for yak in yaklist:
+		yak.print_yak() >> f
 		
 main()
